@@ -1,0 +1,12 @@
+.section {
+    padding: 15px;
+    margin: 0 15px;
+    @include tablet {
+        padding: 0;
+        margin: 0;
+    }
+    .section__body {
+        background-color: #393A48;
+        padding: 40px;
+    }
+}

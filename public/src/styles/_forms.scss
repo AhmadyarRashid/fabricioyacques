@@ -1,0 +1,101 @@
+.form-group,
+.form-inline {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    .form-control {
+        background-color: $bgDark;
+        border: 0;
+        max-width: 400px;
+        height: 45px;
+        padding: 0 15px;
+        color: #fff;
+        &.form-darker {
+            background-color: $bgLighter;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .form-label {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .form-check {
+        display: none;
+        &:checked + .custom-check-label {
+            &:after {
+                display: flex;
+            }
+        }
+    }
+    .custom-check-label {
+        padding-left: 40px;
+        position: relative;
+        font-weight: bold;
+        &.form-check--darker {
+            &:before {
+                background-color: $bgLighter;
+            }
+        }
+        &:before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+            background-color: $bgDark;
+            border: 0;
+
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        &:after {
+            content: '';
+            font-family: 'Line Awesome Free';
+            font-weight: 900;
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+            background-color: $color-violet;
+            border: 0;
+
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            display: none;
+        }
+    }
+}
+
+.form-inline {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+    label {
+        margin-right: 15px;
+        font-weight: bold;
+    }
+}
+
+.form-textarea {
+    width: 100%;
+    min-height: 400px;
+    padding: 15px;
+    border: 0;
+    background-color: $bgDark;
+    resize: none;
+    color: rgba(255,255,255,0.6);
+    &:focus {
+        outline: none;
+    }
+}
