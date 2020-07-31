@@ -1,9 +1,47 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
+import {getAccounts} from '../../API/dashboard';
 
 function Home() {
-  const [profileDropdown, setProfileDropdown] = React.useState(false);
-  const [sideBar, setSideBar] = React.useState(false);
+  const [profileDropdown, setProfileDropdown] = useState(false);
+  const [sideBar, setSideBar] = useState(false);
+  const [accountList, setAccountList] = useState([]);
+
+  useEffect(() => {
+    getAccounts()
+        .then(res => {
+          setAccountList(res);
+        })
+        .catch(err => {
+          console.log('---- error ---', err);
+        })
+  }, []);
+
+  const renderData = () => {
+    return accountList.map(account => (
+        <tr>
+          <td className="outside">
+            <form action="#">
+              <input type="checkbox"/>
+            </form>
+          </td>
+          <td>Summoner123</td>
+          <td>28 <span><span>(58%)</span></span></td>
+          <td>30</td>
+          <td>6</td>
+          <td>45 685</td>
+          <td>Healthy</td>
+          <td>86h 52m</td>
+          <td>EUNE</td>
+          <td className="status working"><i className="la la-check"></i></td>
+          <td>In queue</td>
+          <td>ON</td>
+          <td>...</td>
+          <td><i className="la la-cog"></i></td>
+        </tr>
+    ))
+  };
+
   return (
       <div className="app">
         <div className={`sidebar js-sidebar ${sideBar ? 'show' : null}`}>
@@ -157,126 +195,7 @@ function Home() {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td className="outside">
-                    <form action="#">
-                      <input type="checkbox"/>
-                    </form>
-                  </td>
-                  <td>Summoner123</td>
-                  <td>28 <span><span>(58%)</span></span></td>
-                  <td>30</td>
-                  <td>6</td>
-                  <td>45 685</td>
-                  <td>Healthy</td>
-                  <td>86h 52m</td>
-                  <td>EUNE</td>
-                  <td className="status working"><i className="la la-check"></i></td>
-                  <td>In queue</td>
-                  <td>ON</td>
-                  <td>...</td>
-                  <td><i className="la la-cog"></i></td>
-                </tr>
-                <tr>
-                  <td className="outside">
-                    <form action="#">
-                      <input type="checkbox"/>
-                    </form>
-                  </td>
-                  <td>Summoner123</td>
-                  <td>28 <span>(58%)</span></td>
-                  <td>30</td>
-                  <td>6</td>
-                  <td>45 685</td>
-                  <td>Healthy</td>
-                  <td>86h 52m</td>
-                  <td>EUNE</td>
-                  <td className="status working"><i className="la la-check"></i></td>
-                  <td>In queue</td>
-                  <td>ON</td>
-                  <td>...</td>
-                  <td><i className="la la-cog"></i></td>
-                </tr>
-                <tr>
-                  <td className="outside">
-                    <form action="#">
-                      <input type="checkbox"/>
-                    </form>
-                  </td>
-                  <td>Summoner123</td>
-                  <td>28 <span>(58%)</span></td>
-                  <td>30</td>
-                  <td>6</td>
-                  <td>45 685</td>
-                  <td>Healthy</td>
-                  <td>86h 52m</td>
-                  <td>EUNE</td>
-                  <td className="status working"><i className="la la-check"></i></td>
-                  <td>In queue</td>
-                  <td>ON</td>
-                  <td>...</td>
-                  <td><i className="la la-cog"></i></td>
-                </tr>
-                <tr>
-                  <td className="outside">
-                    <form action="#">
-                      <input type="checkbox"/>
-                    </form>
-                  </td>
-                  <td>Summoner123</td>
-                  <td>28 <span>(58%)</span></td>
-                  <td>30</td>
-                  <td>6</td>
-                  <td>45 685</td>
-                  <td>Healthy</td>
-                  <td>86h 52m</td>
-                  <td>EUNE</td>
-                  <td className="status working"><i className="la la-check"></i></td>
-                  <td>In queue</td>
-                  <td>ON</td>
-                  <td>...</td>
-                  <td><i className="la la-cog"></i></td>
-                </tr>
-                <tr>
-                  <td className="outside">
-                    <form action="#">
-                      <input type="checkbox"/>
-                    </form>
-                  </td>
-                  <td>Summoner123</td>
-                  <td>28 <span>(58%)</span></td>
-                  <td>30</td>
-                  <td>6</td>
-                  <td>45 685</td>
-                  <td>Healthy</td>
-                  <td>86h 52m</td>
-                  <td>EUNE</td>
-                  <td className="status working"><i className="la la-check"></i></td>
-                  <td>In queue</td>
-                  <td>ON</td>
-                  <td>...</td>
-                  <td><i className="la la-cog"></i></td>
-                </tr>
-                <tr>
-                  <td className="outside">
-                    <form action="#">
-                      <input type="checkbox"/>
-                    </form>
-                  </td>
-                  <td>Summoner123</td>
-                  <td>28 <span>(58%)</span></td>
-                  <td>30</td>
-                  <td>6</td>
-                  <td>45 685</td>
-                  <td>Healthy</td>
-                  <td>86h 52m</td>
-                  <td>EUNE</td>
-                  <td className="status working"><i className="la la-check"></i></td>
-                  <td>In queue</td>
-                  <td>ON</td>
-                  <td>...</td>
-                  <td><i className="la la-cog"></i></td>
-                </tr>
+                  {renderData()}
                 </tbody>
               </table>
             </div>

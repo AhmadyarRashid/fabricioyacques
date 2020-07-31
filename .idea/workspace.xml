@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68eb589b-61de-476a-9d5b-1edba6c33d90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +83,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595827419003</updated>
-      <workItem from="1595827420927" duration="7351000" />
+      <workItem from="1595827420927" duration="7588000" />
+      <workItem from="1596206766182" duration="1384000" />
     </task>
     <servers />
   </component>
@@ -94,9 +92,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup" timestamp="1595833568090">
+    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup" timestamp="1596207824407">
       <screen x="0" y="23" width="1280" height="727" />
     </state>
-    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup/0.23.1280.727@0.23.1280.727" timestamp="1595833568090" />
+    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup/0.23.1280.727@0.23.1280.727" timestamp="1596207824407" />
   </component>
 </project>
